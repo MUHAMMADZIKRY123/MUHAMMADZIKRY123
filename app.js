@@ -138,6 +138,16 @@ class App{
                 self.loadingBar.visible = false;
 			
                 self.setupXR();
+                // Load Japanese Lamp model
+                loader.load('old_japanese_lamp__andon.glb', (gltf) => {
+                    const lamp = gltf.scene;
+                    lamp.position.set(2, 0, -3);   // Change X, Y, Z to place it where you want
+                    lamp.scale.set(1.5, 1.5, 1.5); // Optional: scale the lamp bigger/smaller
+                    self.scene.add(lamp);
+                }, undefined, (err) => {
+                    console.error("Error loading lamp model:", err);
+                });
+
 			},
 			// called while loading is progressing
 			function ( xhr ) {
