@@ -138,15 +138,97 @@ class App{
                 self.loadingBar.visible = false;
 			
                 self.setupXR();
-                // Load Japanese Lamp model
+                
                 loader.load('old_japanese_lamp__andon.glb', (gltf) => {
                     const lamp = gltf.scene;
-                    lamp.position.set(2, 0, -3);   // Change X, Y, Z to place it where you want
-                    lamp.scale.set(1.5, 1.5, 1.5); // Optional: scale the lamp bigger/smaller
+                    lamp.position.set(3.5, 0.8, 1);   
+                    lamp.scale.set(0.8, 0.8, 0.8); 
                     self.scene.add(lamp);
                 }, undefined, (err) => {
                     console.error("Error loading lamp model:", err);
                 });
+                
+loader.load('old_japanese_lamp__andon1.glb', (gltf) => {
+    const lamp2 = gltf.scene;
+    lamp2.position.set(-3.5, 0.8, 1);   
+    lamp2.scale.set(0.8, 0.8, 0.8);  
+    self.scene.add(lamp2);
+}, undefined, (err) => {
+    console.error("Error loading second lamp model:", err);
+});
+
+
+loader.load('game_ready_japanese_small_vertical_neon_sign.glb', (gltf) => {
+    const neonSign = gltf.scene;
+    neonSign.position.set(-5.4, 2, 5);    
+    neonSign.scale.set(0.02, 0.02, 0.02);  
+    neonSign.rotation.y = -Math.PI / 2;
+    self.scene.add(neonSign);
+}, undefined, (err) => {
+    console.error("Error loading neon sign:", err);
+});
+
+
+loader.load('toyota_supra_dekztrax_34.glb', (gltf) => {
+    const supra = gltf.scene;
+
+    
+    supra.position.set(6.5, 0, 2.5);      
+
+    
+    supra.scale.set(0.9, 0.9, 0.9);    
+
+    
+    supra.rotation.y = 2 * Math.PI / 3;
+
+    self.scene.add(supra);
+}, undefined, (err) => {
+    console.error("Error loading Supra model:", err);
+});
+
+
+loader.load('honda_nsx_1990.glb', (gltf) => {
+    const nsx = gltf.scene;
+
+    
+    nsx.position.set(6.8, -0.7, 4.9); 
+
+    
+    nsx.scale.set(1.3, 1.3, 1.3);
+
+    
+    nsx.rotation.y =  -Math.PI / 3;
+
+    
+    self.scene.add(nsx);
+}, undefined, (err) => {
+    console.error("Error loading Honda NSX model:", err);
+});
+
+
+loader.load('red_carpet.glb', (gltf) => {
+    const carpet = gltf.scene;
+
+    
+    carpet.position.set(0, 0.01, 4.3); 
+
+    
+    carpet.scale.set(0.8, 0.8, 0.8);
+
+    
+    carpet.rotation.y = 0;
+
+    self.scene.add(carpet);
+}, undefined, (err) => {
+    console.error("Error loading red carpet:", err);
+});
+
+
+
+
+
+
+                
 
 			},
 			// called while loading is progressing
